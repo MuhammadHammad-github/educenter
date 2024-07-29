@@ -1,0 +1,21 @@
+@import "@fontsource/montserrat";
+@import "@fontsource/poppins";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,h2,h3,h4,h5,h6{
+  @apply font-montserrat;
+}
+p, span, a, label, input,button,li{
+  @apply font-poppins;
+}
