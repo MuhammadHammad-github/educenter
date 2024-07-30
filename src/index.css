@@ -1,21 +1,126 @@
-@import "@fontsource/montserrat";
-@import "@fontsource/poppins";
+@import "@fontsource/montserrat/100.css";
+@import "@fontsource/montserrat/200.css";
+@import "@fontsource/montserrat/300.css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/800.css";
+@import "@fontsource/montserrat/900.css";
+
+@import "@fontsource/poppins/100.css";
+@import "@fontsource/poppins/200.css";
+@import "@fontsource/poppins/300.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/poppins/800.css";
+@import "@fontsource/poppins/900.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
+  @apply font-poppins;
   line-height: 1.5;
   font-weight: 400;
-
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-montserrat;
 }
-p, span, a, label, input,button,li{
-  @apply font-poppins;
+p,
+span,
+a,
+label,
+input,
+button,
+li {
+  @apply font-poppins text-slate;
+}
+@layer {
+  .transitional {
+    @apply !transition !duration-200 !ease-in-out;
+  }
+
+  .transitional:hover,
+  .transitional:active,
+  .transitional:focus {
+    @apply !transition !duration-200 !ease-in-out;
+  }
+}
+.topBarLink {
+  @apply text-xs font-semibold hover:text-sunrise transitional;
+}
+.navLink {
+  position: relative;
+}
+
+.navLink::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background: white;
+  bottom: -150%;
+  left: 0;
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+}
+
+.navLink:hover::before {
+  height: 30%;
+  z-index: 10;
+}
+.navLinkActive::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background: white;
+  bottom: -150%;
+  left: 0;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+.homeHero {
+  @apply bg-navy bg-opacity-70;
+  background-image: url("/images/groupStudy.jpg");
+  background-blend-mode: darken;
+  background-size: cover;
+}
+.btn {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.btn span {
+  @apply text-white;
+}
+.btn:hover span {
+  @apply text-sunrise;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 200%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+.btn:hover::before {
+  top: 10%;
 }

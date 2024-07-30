@@ -1,0 +1,41 @@
+.carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 150%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+
+  @apply text-4xl font-light;
+}
+.prev-button {
+  right: 15%;
+}
+.next-button {
+  right: 10%;
+}
+.carousel-slide img {
+  width: 100%;
+  display: block;
+}

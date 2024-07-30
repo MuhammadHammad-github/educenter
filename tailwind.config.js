@@ -4,14 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        color1: "#FFBC3B",
-        color2: "#182B45",
-        color3: "#5C5C77",
-        color4: "#1E1E4B",
+        sunrise: "#FFBC3B", // A warm, bright yellow-orange
+        midnight: "#182B45", // A deep, dark blue
+        slate: "#5C5C77", // A muted, medium gray-blue
+        navy: "#1E1E4B", // A dark navy blue
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
+      },
+      screens: {
+        "960px": "960px",
+        "460px": "460px",
+        xs: "427px",
       },
     },
   },
