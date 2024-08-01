@@ -6,7 +6,7 @@ import {
   Twitter,
 } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useGetScrollPos from "../hooks/useGetScrollPos";
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
     { text: "Contact", link: "/contact" },
   ];
   return (
-    <header className="fixed top-0 left-0 w-full">
+    <header className="fixed z-50 top-0 left-0 w-full">
       <TopBar />
       <MyNavbar setToggled={setToggled} navLinks={navLinks} />
       <SmallScreenNavLinks navLinks={navLinks} toggled={toggled} />
@@ -32,7 +32,6 @@ const Header = () => {
 export default Header;
 const TopBar = () => {
   const scrollPos = useGetScrollPos();
-  console.log(scrollPos);
   return (
     <div
       className={`transition bg-white   ${scrollPos >= 5 && "transition absolute   -top-24  w-full opacity-0"} py-4 px-10 flex 960px:flex-row flex-col justify-center items-center 960px:justify-between gap-y-4 uppercase`}
@@ -42,10 +41,10 @@ const TopBar = () => {
           call +44 300 303 0266
         </span>
         <div className="flex flex-wrap items-center gap-3">
-          <FacebookRounded className="text-slate !text-base !cursor-pointer transitional  hover:text-sunrise" />
-          <Twitter className="text-slate !text-base !cursor-pointer transitional  hover:text-sunrise" />{" "}
-          <GitHub className="text-slate !text-base !cursor-pointer transitional  hover:text-sunrise" />{" "}
-          <Instagram className="text-slate !text-base !cursor-pointer transitional  hover:text-sunrise" />
+          <FacebookRounded className="text-slate xs:!text-base !text-xs !cursor-pointer transitional  hover:text-sunrise" />
+          <Twitter className="text-slate  xs:!text-base !text-xs  !cursor-pointer transitional  hover:text-sunrise" />{" "}
+          <GitHub className="text-slate  xs:!text-base !text-xs  !cursor-pointer transitional  hover:text-sunrise" />{" "}
+          <Instagram className="text-slate  xs:!text-base !text-xs  !cursor-pointer transitional  hover:text-sunrise" />
         </div>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-6 xs:px-14 px-4">
@@ -75,7 +74,7 @@ const MyNavbar = ({ setToggled, navLinks }) => {
     <div
       className={`${
         scrollPos > 5 ? "bg-navy" : "lg:bg-transparent bg-navy"
-      } lg:pl-20 lg:px-0 md:px-36 sm:px-28 xs:px-18 px-8 flex items-center justify-between  h-24 transition-all duration-500 ease-in-out`}
+      } lg:pl-20 lg:px-0 md:px-36 sm:px-28 xs:px-18 px-8 flex items-center justify-between  h-24 transition-all duration-500 ease-in-out z-50`}
     >
       <div className="py-6">
         <img
@@ -85,10 +84,12 @@ const MyNavbar = ({ setToggled, navLinks }) => {
         />
       </div>
       <div
-        className=" border px-2 py-1 border-gray-700 lg:hidden cursor-pointer"
-        onClick={() => setToggled((prev) => !prev)}
+        className=" border z-50  px-2 py-1 border-gray-700 lg:hidden cursor-pointer"
+        onClick={() => {
+          setToggled((prev) => !prev);
+        }}
       >
-        <Menu className="text-gray-400 !text-4xl  " />
+        <Menu className="text-gray-400 !text-4xl " />
       </div>
       <LargeScreenNavLinks navLinks={navLinks} />
     </div>
@@ -96,7 +97,7 @@ const MyNavbar = ({ setToggled, navLinks }) => {
 };
 const LargeScreenNavLinks = ({ navLinks }) => {
   const location = useLocation();
-
+  const navigate = useNavigate();
   const pathname = location.pathname;
 
   return (
@@ -105,8 +106,11 @@ const LargeScreenNavLinks = ({ navLinks }) => {
         return (
           <a
             key={index}
-            href={item.link}
-            className={` ${pathname === item.link && "navLinkActive"} text-white font-semibold navLink relative`}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(item.link);
+            }}
+            className={` ${pathname === item.link && "navLinkActive"} cursor-pointer text-white font-semibold navLink relative`}
           >
             {item.text}
           </a>
@@ -118,7 +122,7 @@ const LargeScreenNavLinks = ({ navLinks }) => {
 const SmallScreenNavLinks = ({ navLinks, toggled }) => {
   const location = useLocation();
   const pathname = location.pathname;
-
+  const navigate = useNavigate();
   const [hide, setHide] = useState(false);
   useEffect(() => {
     if (!toggled)
@@ -138,8 +142,11 @@ const SmallScreenNavLinks = ({ navLinks, toggled }) => {
           return (
             <a
               key={index}
-              href={item.link}
-              className={` ${pathname === item.link && "bg-black bg-opacity-20"} text-white font-semibold hover:bg-black w-full text-center  transitional hover:bg-opacity-20 py-4 relative`}
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(item.link);
+              }}
+              className={` ${pathname === item.link && "bg-black bg-opacity-20"} text-white font-semibold hover:bg-black w-full text-center  transitional hover:bg-opacity-20 py-4 relative cursor-pointer`}
             >
               {item.text}
             </a>

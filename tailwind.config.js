@@ -18,6 +18,9 @@ export default {
         "460px": "460px",
         xs: "427px",
       },
+      fontSize: {
+        "40px": "40px",
+      },
     },
   },
   plugins: [],

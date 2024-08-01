@@ -31,13 +31,13 @@ const Carousel = ({ slides, interval = 3000 }) => {
                 Your bright future is our mission
               </h1>
               {/* <h1>{slide.heading}</h1> */}
-              <p className="w-[60%] text-gray-400 my-4">
+              <p className="w-[60%] text-gray-400 my-5">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
                 totam autem veritatis optio possimus consequuntur nobis
                 doloremque rem nostrum quasi, atque doloribus iusto .
               </p>
               {/* <p>{slide.para}</p> */}
-              <MyButton />
+              <MyButton text={"Apply Now"} />
             </div>
           ))}
         </div>
