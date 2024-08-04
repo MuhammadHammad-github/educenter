@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = ({ path = "About Us" }) => {
   return (
-    <div className="hero respPx20    xs:pt-60 py-72 pb-32">
+    <div className="hero respPx20    xs:pt-60 py-80 pb-32">
       <div className="flex gap-2 items-end">
         <h1 className="text-sunrise font-extrabold xs:text-5xl text-4xl">
           Home
