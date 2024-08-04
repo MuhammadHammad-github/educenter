@@ -8,7 +8,7 @@ import React from "react";
 
 const SuccessStories = () => {
   return (
-    <div className="successStories respPx20 py-24 grid md:grid-cols-3 grid-cols-1 gap-10">
+    <div className="successStories !mt-0 respPx20 py-24 grid md:grid-cols-3 grid-cols-1 gap-10">
       <div className="flex  items-center md:justify-start justify-center md:py-0 py-10">
         <div className="bg-sunrise rounded-full p-10 cursor-pointer playBtn relative ">
           <div className="playHoverItem"></div>
