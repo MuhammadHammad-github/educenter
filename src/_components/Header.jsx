@@ -68,26 +68,7 @@ const TopBar = () => {
     <div
       className={`transition bg-white   ${scrollPos >= 5 && "transition absolute   -top-24  w-full opacity-0"} py-4 px-10 flex 960px:flex-row flex-col justify-center items-center 960px:justify-between gap-y-4 uppercase`}
     >
-      <MyModal open={open} setOpen={setOpen}>
-        <h2 className="text-2xl font-extrabold">Login</h2>
-        <form onSubmit={handleSubmit} className="my-6">
-          <MyInput placeholder={"Phone"} type="text" name="phone" />
-          <MyInput placeholder={"Name"} type="text" name="name" />
-          <MyInput placeholder={"Password"} type="password" name="password" />
-          <MyButton text={"Login"} className={"mt-4"} />
-        </form>
-      </MyModal>
-      <MyModal open={openRegister} setOpen={setOpenRegister}>
-        <h2 className="text-2xl font-extrabold">Register</h2>
-        <form onSubmit={handleSubmit} className="my-6">
-          <MyInput placeholder={"Phone"} type="text" name="phone" />
-          <MyInput placeholder={"Name"} type="text" name="name" />
-          <MyInput placeholder={"Email"} type="email" name="email" />
-          <MyInput placeholder={"Password"} type="password" name="password" />
-          <MyButton text={"Register"} className={"mt-4"} />
-        </form>
-      </MyModal>
-      <div className="uppercase flex   gap-6 items-center 460px:px-14 ">
+      <div className="uppercase flex   gap-6 items-center 460px:px-14 justify-center">
         <span className="text-xs min-w-max !font-semibold transitional hover:text-sunrise cursor-pointer">
           call +44 300 303 0266
         </span>
@@ -114,6 +95,27 @@ const TopBar = () => {
         <a href="#" className="topBarLink" onClick={handleOpenRegister}>
           register
         </a>
+      </div>
+      <div className="absolute">
+        <MyModal open={open} setOpen={setOpen}>
+          <h2 className="text-2xl font-extrabold">Login</h2>
+          <form onSubmit={handleSubmit} className="my-6">
+            <MyInput placeholder={"Phone"} type="text" name="phone" />
+            <MyInput placeholder={"Name"} type="text" name="name" />
+            <MyInput placeholder={"Password"} type="password" name="password" />
+            <MyButton text={"Login"} className={"mt-4"} />
+          </form>
+        </MyModal>
+        <MyModal open={openRegister} setOpen={setOpenRegister}>
+          <h2 className="text-2xl font-extrabold">Register</h2>
+          <form onSubmit={handleSubmit} className="my-6">
+            <MyInput placeholder={"Phone"} type="text" name="phone" />
+            <MyInput placeholder={"Name"} type="text" name="name" />
+            <MyInput placeholder={"Email"} type="email" name="email" />
+            <MyInput placeholder={"Password"} type="password" name="password" />
+            <MyButton text={"Register"} className={"mt-4"} />
+          </form>
+        </MyModal>
       </div>
     </div>
   );
