@@ -10,7 +10,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <div className="lg:grid-cols-3 grid-cols-1 grid pt-44  bg-[#F8F8F8] relative">
+    <div className="lg:grid-cols-3 grid-cols-1 mt-0 grid pt-44  bg-[#F8F8F8] relative">
       <div>
         <img
           src="https://demo.themefisher.com/educenter-bootstrap/images/banner/banner-feature.png"
@@ -19,7 +19,7 @@ const Features = () => {
         />
       </div>
       <div
-        className="grid sm:grid-cols-2 xl:gap-20 gap-10 flex-wrap lg:absolute -top-24 left-1/3
+        className="grid sm:grid-cols-2 grid-cols-1 xl:gap-20 gap-10 flex-wrap lg:absolute -top-32 left-1/3
         xl:p-20 p-10 h-full lg:w-2/3 w-full bg-[#F8F8F8]"
       >
         <FeatureCard

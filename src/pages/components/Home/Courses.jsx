@@ -41,7 +41,7 @@ const Courses = ({
     <div className="py-10 respPx10">
       {showHeading && (
         <div className="pb-4 flex items-center justify-between">
-          <h1 className="font-bold text-5xl">Our Course</h1>
+          <h1 className="font-bold xs:text-40px text-3xl">Our Course</h1>
           <MyButton2 text={"See All"} />
         </div>
       )}

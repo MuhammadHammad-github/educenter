@@ -4,7 +4,7 @@ import MyButton2 from "../../../_components/MyButton2";
 
 const About = () => {
   return (
-    <div className="respPx10 py-20 grid lg:grid-cols-2 gap-10">
+    <div className="respPx10 py-20 grid lg:grid-cols-2 grid-cols-1 gap-10">
       <div>
         <h1 className="text-5xl font-bold">About Educenter</h1>
         <div className="my-10 flex flex-col gap-4">

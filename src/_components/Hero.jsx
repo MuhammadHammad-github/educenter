@@ -9,7 +9,7 @@ const Hero = ({ path = "About Us" }) => {
           Home
         </h1>
         <ChevronRight className="text-white xs:!text-4xl text-3xl !font-extralight " />
-        <h2 className="text-white xs:text-3xl text-2xl font-bold">{path}</h2>
+        <h2 className="text-white xs:text-3xl  text-2xl font-bold">{path}</h2>
       </div>
       <p className="text-white my-4 respHeroHeadingWidth font-light">
         Our courses offer a good compromise between the continuous assessment

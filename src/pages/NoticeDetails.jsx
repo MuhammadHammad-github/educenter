@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../_components/Hero";
 import MyButton from "../_components/MyButton";
+import MyListItem from "../_components/MyListItem";
 const NoticeDetails = () => {
   return (
     <div>
@@ -39,33 +40,17 @@ const NoticeDetails = () => {
             in sollicitudin donec arcu lorem.
           </p>
           <ul className=" ">
-            <li className="relative my-2 mx-5">
-              <span className="absolute top-1/2 -left-5 -translate-y-1/2 bg-sunrise p-1 rounded-full"></span>
-              Digital Access to Scholarship at Smart
-            </li>
-            <li className="relative my-2 mx-5">
-              <span className="absolute top-1/2 -left-5 -translate-y-1/2 bg-sunrise p-1 rounded-full"></span>
-              Institutes
-            </li>
-            <li className="relative my-2 mx-5">
-              <span className="absolute top-1/2 -left-5 -translate-y-1/2 bg-sunrise p-1 rounded-full"></span>
-              Smart-affiliated hospitals and research
-            </li>
-            <li className="relative my-2 mx-5">
-              <span className="absolute top-1/2 -left-5 -translate-y-1/2 bg-sunrise p-1 rounded-full"></span>
-              Smart Catalyst
-            </li>
-            <li className="relative my-2 mx-5">
-              <span className="absolute top-1/2 -left-5 -translate-y-1/2 bg-sunrise p-1 rounded-full"></span>
-              Smart Library Portal
-            </li>
-            <li className="relative my-2 mx-5">
-              <span className="absolute top-1/2 -left-5 -translate-y-1/2 bg-sunrise p-1 rounded-full"></span>
-              Smart research programs and departments Subscribe
-            </li>
+            <MyListItem text={"Digital Access to Scholarship at Smart"} />
+            <MyListItem text={"Institutes"} />
+            <MyListItem text={"Smart-affiliated hospitals and research"} />
+            <MyListItem text={"Smart Catalyst"} />
+            <MyListItem text={"Smart Library Portal"} />
+            <MyListItem
+              text={"Smart research programs and departments Subscribe"}
+            />
           </ul>
           <div className="my-10">
-            <MyButton text={"Download "} />
+            <MyButton text={"Download"} />
           </div>
         </div>
       </div>

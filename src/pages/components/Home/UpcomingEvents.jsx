@@ -6,7 +6,7 @@ const UpcomingEvents = () => {
   return (
     <div className="py-24 respPx10 bg-[#F8F8F8]">
       <div className="pb-5 flex items-center justify-between">
-        <h2 className="text-40px font-bold  ">Upcoming Events</h2>
+        <h2 className="xs:text-40px text-3xl font-bold  ">Upcoming Events</h2>
         <MyButton2 text={"See All"} />
       </div>
       <div className="resp3ColGrid gap-4">
